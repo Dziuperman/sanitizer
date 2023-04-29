@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<psalm
+    allowPhpStormGenerics="true"
+    checkForThrowsDocblock="true"
+    checkForThrowsInGlobalScope="true"
+    ensureArrayStringOffsetsExist="true"
+    errorLevel="4"
+    findUnusedPsalmSuppress="true"
+    reportMixedIssues="true"
+    resolveFromConfigFile="true"
+    sealAllMethods="true"
+    skipChecksOnUnresolvableIncludes="false"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    findUnusedBaselineEntry="true"
+    findUnusedCode="false"
+>
+    <projectFiles>
+        <directory name="src" />
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+
+    <issueHandlers>
+        <MixedAssignment errorLevel="suppress" />
+    </issueHandlers>
+
+    <ignoreExceptions>
+        <classAndDescendants name="Error" />
+        <classAndDescendants name="LogicException" />
+        <classAndDescendants name="RuntimeException" />
+    </ignoreExceptions>
+</psalm>
